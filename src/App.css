@@ -1,3 +1,10 @@
+.title {
+  position: "absolute";
+  top: "50%";
+  left: "50%";
+  color: red;
+}
+
 .App {
   text-align: center;
 }
