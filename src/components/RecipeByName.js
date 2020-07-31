@@ -10,49 +10,56 @@ export default class RecipeByName extends Component {
     super();
 
     this.state = {
-        drinkName: "",
+      drinkName: "",
       drinks: [],
     };
   }
 
   onDrinkNameChange = (e) => {
     this.setState({
-      drinkName: e.target.value
-    })
-  }
+      drinkName: e.target.value,
+    });
+  };
 
-  async searchRecipeByName(){
-      try {
-      const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`);
+  async searchRecipeByName() {
+    try {
+      const response = await axios.get(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+      );
       // Returns matching drinks in an array
       const drinks = response.data.drinks;
       console.log(`Drinks returned:  ${drinks}`);
-  
+
       this.setState((prevState) => {
         const newDrinksArray = new Array(prevState.drinks);
-        return ({
-          drinks : newDrinksArray
-        })
-      })  
-      } catch (error) {
-        console.log("error: ", error)
-      }
+        return {
+          drinks: newDrinksArray,
+        };
+      });
+    } catch (error) {
+      console.log("error: ", error);
     }
-
+  }
 
   handleFormSubmission = (e) => {
     e.preventDefault();
+    console.log("Form submitted1");
+
     this.searchRecipeByName();
-    console.log("Form submitted")
-  }
+    console.log("Form submitted");
+  };
 
   render() {
     return (
       <div>
         <Form>
-          <Form.Group >
+          <Form.Group>
             <Form.Label>Drink Name</Form.Label>
-            <Form.Control type="Text" placeholder="Enter drink name" onChange={this.onDrinkNameChange} />
+            <Form.Control
+              type="Text"
+              placeholder="Enter drink name"
+              onChange={this.onDrinkNameChange}
+            />
             <Form.Text className="text-muted">
               What drink recipe would you like
             </Form.Text>
