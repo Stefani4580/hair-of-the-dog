@@ -108,9 +108,9 @@ getIngredientsIntoAnArray = (item) =>{
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
         // Get ingredients into an array
-        this.getIngredientsIntoAnArray(item);
+        let ingredients = this.getIngredientsIntoAnArray(item);
       return (
-        <DisplayRecipes key={item.idDrink} strDrink={item.strDrink} strInstructions={item.strInstructions} />
+        <DisplayRecipes key={item.idDrink} strDrink={item.strDrink} strInstructions={item.strInstructions} ingredients={ingredients} />
      )
     });
 
