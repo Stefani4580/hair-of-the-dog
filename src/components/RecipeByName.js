@@ -52,7 +52,7 @@ export default class RecipeByName extends Component {
   };
 
 getIngredientsIntoAnArray = (item) =>{
-        strIngredients = [];
+        let strIngredients = [];
 
         if (item.strIngredient1 != null) {
             strIngredients.push(item.strIngredient1);         
