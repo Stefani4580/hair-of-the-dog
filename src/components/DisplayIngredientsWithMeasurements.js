@@ -4,6 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 function DisplayIngredientsWithMeasurements(props) {
   // Measurements and Ingredients are in sychronized arrays.
 
+  console.log("this is props:  ",props);
   let listOfIngredMeas = "";
   for (let i = 0; i < props.ingredients.length; i++) {
     listOfIngredMeas += `<ListGroup horizontal>
