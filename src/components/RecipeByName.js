@@ -51,13 +51,67 @@ export default class RecipeByName extends Component {
     console.log("Form submitted");
   };
 
+getIngredientsIntoAnArray = (item) =>{
+        strIngredients = [];
+
+        if (item.strIngredient1 != null) {
+            strIngredients.push(item.strIngredient1);         
+        }
+        if (item.strIngredient2 != null) {
+            strIngredients.push(item.strIngredient2);         
+        }
+        if (item.strIngredient3 != null) {
+            strIngredients.push(item.strIngredient3);         
+        }
+        if (item.strIngredient4 != null) {
+            strIngredients.push(item.strIngredient4);         
+        }
+        if (item.strIngredient5 != null) {
+            strIngredients.push(item.strIngredient5);         
+        }
+        if (item.strIngredient6 != null) {
+            strIngredients.push(item.strIngredient6);         
+        }
+        if (item.strIngredient7 != null) {
+            strIngredients.push(item.strIngredient7);         
+        }
+        if (item.strIngredient8 != null) {
+            strIngredients.push(item.strIngredient8);         
+        }
+        if (item.strIngredient9 != null) {
+            strIngredients.push(item.strIngredient9);         
+        }
+        if (item.strIngredient10 != null) {
+            strIngredients.push(item.strIngredient10);         
+        }
+        if (item.strIngredient11 != null) {
+            strIngredients.push(item.strIngredient11);         
+        }
+        if (item.strIngredient12 != null) {
+            strIngredients.push(item.strIngredient12);         
+        }
+        if (item.strIngredient13 != null) {
+            strIngredients.push(item.strIngredient13);         
+        }
+        if (item.strIngredient14 != null) {
+            strIngredients.push(item.strIngredient14);         
+        }
+        if (item.strIngredient15 != null) {
+            strIngredients.push(item.strIngredient15);         
+        }
+
+        return strIngredients;
+        
+           }
+
+
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
+        // Get ingredients into an array
+        this.getIngredientsIntoAnArray(item);
       return (
-        <h5 key={id}>
-          {id}. {item}
-        </h5>
-      );
+        <DisplayRecipes key={item.idDrink} strDrink={item.strDrink} strInstructions={item.strInstructions} />
+     )
     });
 
     return (
