@@ -5,6 +5,7 @@ import DisplayRecipes from "./DisplayRecipes";
 // React Bootstrap 4
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import CardGroup from "react-bootstrap/CardGroup";
 
 export default class RecipeByName extends Component {
   constructor() {
@@ -26,7 +27,7 @@ export default class RecipeByName extends Component {
   async searchRecipeByName() {
     try {
       const response = await axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.drinkName}`
       );
       // Returns matching drinks in an array
       const drinks = response.data.drinks;
