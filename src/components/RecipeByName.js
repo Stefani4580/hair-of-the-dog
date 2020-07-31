@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import DisplayRecipes from "./DisplayRecipes";
 
 // React Bootstrap 4
 import Form from "react-bootstrap/Form";
@@ -69,6 +70,9 @@ export default class RecipeByName extends Component {
             Submit
           </Button>
         </Form>
+        <CardGroup>
+
+        </CardGroup>
       </div>
     );
   }
