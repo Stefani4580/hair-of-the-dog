@@ -17,14 +17,13 @@ export default class RecipeByName extends Component {
     return (
       <div>
         <Form>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group >
             <Form.Label>Drink Name</Form.Label>
             <Form.Control type="Text" placeholder="Enter drink name" />
             <Form.Text className="text-muted">
               What drink recipe would you like
             </Form.Text>
           </Form.Group>
-
           <Button variant="primary" type="submit">
             Submit
           </Button>
