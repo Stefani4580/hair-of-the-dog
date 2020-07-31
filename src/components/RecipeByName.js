@@ -16,6 +16,7 @@ export default class RecipeByName extends Component {
   }
 
   onDrinkNameChange = (e) => {
+      console.log("In onDrinkNameChange");
     this.setState({
       drinkName: e.target.value,
     });
@@ -28,7 +29,7 @@ export default class RecipeByName extends Component {
       );
       // Returns matching drinks in an array
       const drinks = response.data.drinks;
-      console.log(`Drinks returned:  ${drinks}`);
+      console.log('Drinks returned:', drinks);
 
       this.setState((prevState) => {
         const newDrinksArray = new Array(prevState.drinks);
@@ -41,7 +42,7 @@ export default class RecipeByName extends Component {
     }
   }
 
-  handleFormSubmission = (e) => {
+  handleFormSubmission = (e) =>{
     e.preventDefault();
     console.log("Form submitted1");
 
@@ -64,7 +65,7 @@ export default class RecipeByName extends Component {
               What drink recipe would you like
             </Form.Text>
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={this.handleFormSubmission}>
             Submit
           </Button>
         </Form>
