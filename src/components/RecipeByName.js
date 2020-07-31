@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 // React Bootstrap 4
 import Form from "react-bootstrap/Form";
@@ -10,7 +11,7 @@ export default class RecipeByName extends Component {
 
     this.state = {
         drinkName: "",
-      data: [],
+      drinks: [],
     };
   }
 
@@ -20,13 +21,28 @@ export default class RecipeByName extends Component {
     })
   }
 
+  async searchRecipeByName(){
+      try {
+      const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`);
+      // Returns matching drinks in an array
+      const drinks = response.data.drinks;
+      console.log(`Drinks returned:  ${drinks}`);
+  
+      this.setState((prevState) => {
+        const newDrinksArray = new Array(prevState.drinks);
+        return ({
+          drinks : newDrinksArray
+        })
+      })  
+      } catch (error) {
+        console.log("error: ", error)
+      }
+    }
+
 
   handleFormSubmission = (e) => {
     e.preventDefault();
-    searchRecipeByName();
-    this.setState({
-      formCompleted: true
-    })
+    this.searchRecipeByName();
     console.log("Form submitted")
   }
 
