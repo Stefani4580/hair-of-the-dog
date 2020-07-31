@@ -103,7 +103,7 @@ export default class RecipeByName extends Component {
   };
 
   // Measurements for ingredients are stored in 15 named parameters.  This method collects them into an array.
-  getIMeasurementsIntoAnArray = (item) => {
+  getMeasurementsIntoAnArray = (item) => {
     let strMeasures = [];
 
     if (item.strMeasure1 != null) {
@@ -162,7 +162,7 @@ export default class RecipeByName extends Component {
         console.log("This is a recipe:  ", item);
       // Get ingredients into an array
       let ingredients = this.getIngredientsIntoAnArray(item);
-      let measurements = this.getIMeasurementsIntoAnArray(item);
+      let measurements = this.getMeasurementsIntoAnArray(item);
       return (
         <DisplayRecipes
           key={id}
