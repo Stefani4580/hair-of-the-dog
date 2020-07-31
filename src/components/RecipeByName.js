@@ -34,7 +34,7 @@ export default class RecipeByName extends Component {
       console.log("Drinks returned:", drinks);
 
       this.setState((prevState) => {
-        const newDrinksArray = new Array(prevState.drinks);
+        const newDrinksArray = new Array(drinks);
         return {
           drinks: newDrinksArray,
         };
@@ -167,7 +167,7 @@ export default class RecipeByName extends Component {
       let measurements = this.getIMeasurementsIntoAnArray(item);
       return (
         <DisplayRecipes
-          key={item.idDrink}
+          key={id}
           strDrink={item.strDrink}
           strInstructions={item.strInstructions}
           ingredients={ingredients}
