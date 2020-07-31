@@ -174,6 +174,7 @@ export default class RecipeByName extends Component {
         />
       );
     });
+    console.log("This is listOfDrinkRecipes:  ", listOfDrinkRecipes);
 
     return (
       <div>
