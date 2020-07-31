@@ -51,67 +51,126 @@ export default class RecipeByName extends Component {
     console.log("Form submitted");
   };
 
-getIngredientsIntoAnArray = (item) =>{
-        let strIngredients = [];
+  // Ingredients are stored in 15 named parameters.  This method collects them into an array.
+  getIngredientsIntoAnArray = (item) => {
+    let strIngredients = [];
 
-        if (item.strIngredient1 != null) {
-            strIngredients.push(item.strIngredient1);         
-        }
-        if (item.strIngredient2 != null) {
-            strIngredients.push(item.strIngredient2);         
-        }
-        if (item.strIngredient3 != null) {
-            strIngredients.push(item.strIngredient3);         
-        }
-        if (item.strIngredient4 != null) {
-            strIngredients.push(item.strIngredient4);         
-        }
-        if (item.strIngredient5 != null) {
-            strIngredients.push(item.strIngredient5);         
-        }
-        if (item.strIngredient6 != null) {
-            strIngredients.push(item.strIngredient6);         
-        }
-        if (item.strIngredient7 != null) {
-            strIngredients.push(item.strIngredient7);         
-        }
-        if (item.strIngredient8 != null) {
-            strIngredients.push(item.strIngredient8);         
-        }
-        if (item.strIngredient9 != null) {
-            strIngredients.push(item.strIngredient9);         
-        }
-        if (item.strIngredient10 != null) {
-            strIngredients.push(item.strIngredient10);         
-        }
-        if (item.strIngredient11 != null) {
-            strIngredients.push(item.strIngredient11);         
-        }
-        if (item.strIngredient12 != null) {
-            strIngredients.push(item.strIngredient12);         
-        }
-        if (item.strIngredient13 != null) {
-            strIngredients.push(item.strIngredient13);         
-        }
-        if (item.strIngredient14 != null) {
-            strIngredients.push(item.strIngredient14);         
-        }
-        if (item.strIngredient15 != null) {
-            strIngredients.push(item.strIngredient15);         
-        }
+    if (item.strIngredient1 != null) {
+      strIngredients.push(item.strIngredient1);
+    }
+    if (item.strIngredient2 != null) {
+      strIngredients.push(item.strIngredient2);
+    }
+    if (item.strIngredient3 != null) {
+      strIngredients.push(item.strIngredient3);
+    }
+    if (item.strIngredient4 != null) {
+      strIngredients.push(item.strIngredient4);
+    }
+    if (item.strIngredient5 != null) {
+      strIngredients.push(item.strIngredient5);
+    }
+    if (item.strIngredient6 != null) {
+      strIngredients.push(item.strIngredient6);
+    }
+    if (item.strIngredient7 != null) {
+      strIngredients.push(item.strIngredient7);
+    }
+    if (item.strIngredient8 != null) {
+      strIngredients.push(item.strIngredient8);
+    }
+    if (item.strIngredient9 != null) {
+      strIngredients.push(item.strIngredient9);
+    }
+    if (item.strIngredient10 != null) {
+      strIngredients.push(item.strIngredient10);
+    }
+    if (item.strIngredient11 != null) {
+      strIngredients.push(item.strIngredient11);
+    }
+    if (item.strIngredient12 != null) {
+      strIngredients.push(item.strIngredient12);
+    }
+    if (item.strIngredient13 != null) {
+      strIngredients.push(item.strIngredient13);
+    }
+    if (item.strIngredient14 != null) {
+      strIngredients.push(item.strIngredient14);
+    }
+    if (item.strIngredient15 != null) {
+      strIngredients.push(item.strIngredient15);
+    }
 
-        return strIngredients;
-        
-           }
+    return strIngredients;
+  };
+
+  // Measurements for ingredients are stored in 15 named parameters.  This method collects them into an array.
+  getIngredientsIntoAnArray = (item) => {
+    let strMeasures = [];
+
+    if (item.strMeasure1 != null) {
+      strMeasures.push(item.strMeasure1);
+    }
+    if (item.strMeasure2 != null) {
+      strMeasures.push(item.strMeasure2);
+    }
+    if (item.strMeasure3 != null) {
+      strMeasures.push(item.strMeasure3);
+    }
+    if (item.strMeasure4 != null) {
+      strMeasures.push(item.strMeasure4);
+    }
+    if (item.strMeasure5 != null) {
+      strMeasures.push(item.strMeasure5);
+    }
+    if (item.strMeasure6 != null) {
+      strMeasures.push(item.strMeasure6);
+    }
+    if (item.strMeasure7 != null) {
+      strMeasures.push(item.strMeasure7);
+    }
+    if (item.strMeasure8 != null) {
+      strMeasures.push(item.strMeasure8);
+    }
+    if (item.strMeasure9 != null) {
+      strMeasures.push(item.strMeasure9);
+    }
+    if (item.strMeasure10 != null) {
+      strMeasures.push(item.strMeasure10);
+    }
+    if (item.strMeasure11 != null) {
+      strMeasures.push(item.strMeasure11);
+    }
+    if (item.strMeasure12 != null) {
+      strMeasures.push(item.strMeasure12);
+    }
+    if (item.strMeasure13 != null) {
+      strMeasures.push(item.strMeasure13);
+    }
+    if (item.strMeasure14 != null) {
+      strMeasures.push(item.strMeasure14);
+    }
+    if (item.strMeasure15 != null) {
+      strMeasures.push(item.strMeasure15);
+    }
+
+    return strMeasures;
+  };
+
 
 
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
-        // Get ingredients into an array
-        let ingredients = this.getIngredientsIntoAnArray(item);
+      // Get ingredients into an array
+      let ingredients = this.getIngredientsIntoAnArray(item);
       return (
-        <DisplayRecipes key={item.idDrink} strDrink={item.strDrink} strInstructions={item.strInstructions} ingredients={ingredients} />
-     )
+        <DisplayRecipes
+          key={item.idDrink}
+          strDrink={item.strDrink}
+          strInstructions={item.strInstructions}
+          ingredients={ingredients}
+        />
+      );
     });
 
     return (
