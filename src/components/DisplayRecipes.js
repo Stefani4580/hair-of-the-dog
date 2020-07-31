@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-
+import DisplayIngredientsWithMeasurements from "./DisplayIngredientsWithMeasurements";
 function DisplayRecipes(props) {
   console.log("This is props: ", props);
 
@@ -10,12 +9,10 @@ function DisplayRecipes(props) {
       <Card.Img variant="top" src={props.strDrinkThumb} />
       <Card.Body>
         <Card.Title>{props.strDrink}</Card.Title>
-        <ListGroup horizontal>
-          <ListGroup.Item>This</ListGroup.Item>
-          <ListGroup.Item>ListGroup</ListGroup.Item>
-          <ListGroup.Item>renders</ListGroup.Item>
-          <ListGroup.Item>horizontally!</ListGroup.Item>
-        </ListGroup>
+        <DisplayIngredientsWithMeasurements
+          measurements={props.measurments}
+          ingredients={props.ingredients}
+        />
         <Card.Text>{props.strInstructions}</Card.Text>
       </Card.Body>
       <Card.Footer>
