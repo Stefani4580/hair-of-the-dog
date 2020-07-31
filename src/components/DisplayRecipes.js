@@ -3,6 +3,8 @@ import Card from "react-bootstrap/Card";
 
 
 function DisplayRecipes(props) {
+
+    console.log("This is props: ", props);
   
   return(
       <Card>

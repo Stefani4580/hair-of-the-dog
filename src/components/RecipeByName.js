@@ -34,9 +34,9 @@ export default class RecipeByName extends Component {
       console.log("Drinks returned:", drinks);
 
       this.setState((prevState) => {
-        const newDrinksArray = new Array(drinks);
+        // const newDrinksArray = new Array(drinks);
         return {
-          drinks: newDrinksArray,
+          drinks: drinks,
         };
       });
     } catch (error) {
@@ -162,6 +162,7 @@ export default class RecipeByName extends Component {
 
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
+        console.log("This is a recipe:  ", item);
       // Get ingredients into an array
       let ingredients = this.getIngredientsIntoAnArray(item);
       let measurements = this.getIMeasurementsIntoAnArray(item);
