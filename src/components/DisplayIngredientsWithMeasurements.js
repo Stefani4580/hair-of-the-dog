@@ -3,16 +3,18 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 function DisplayIngredientsWithMeasurements(props) {
   // Measurements and Ingredients are in sychronized arrays.
-  let index = 0;
-  const listOfIngredMeas = props.ingredient.map((ingredient) => {
-    <ListGroup horizontal>
+
+  let listOfIngredMeas = "";
+  for (let i = 0; i < props.ingredients.length; i++) {
+    listOfIngredMeas += `<ListGroup horizontal>
       <ListGroup.Item>
-        {props.measurement[index] === null ? "" : props.measurement[index]}
+        ${props.measurements[i] === null ? "" : props.measurements[i]}
       </ListGroup.Item>
-      <ListGroup.Item>{ingredient}</ListGroup.Item>
-    </ListGroup>;
-  });
-  return <div>{listOfIngredMeas} </div>;
+      <ListGroup.Item>${props.ingredients[i]}</ListGroup.Item>
+    </ListGroup>`;
+  }
+ 
+  return ({listOfIngredMeas});
 }
 
 export default DisplayIngredientsWithMeasurements;
