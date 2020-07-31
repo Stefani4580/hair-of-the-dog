@@ -166,6 +166,7 @@ export default class RecipeByName extends Component {
       return (
         <DisplayRecipes
           key={id}
+          strDrinkThumb={item.strDrinkThumb}
           strDrink={item.strDrink}
           strInstructions={item.strInstructions}
           ingredients={ingredients}

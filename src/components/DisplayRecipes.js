@@ -8,7 +8,7 @@ function DisplayRecipes(props) {
   
   return(
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src={props.strDrinkThumb} />
         <Card.Body>
           <Card.Title>{props.strDrink}</Card.Title>
           <Card.Text>
