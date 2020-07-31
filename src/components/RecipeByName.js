@@ -18,7 +18,6 @@ export default class RecipeByName extends Component {
   }
 
   onDrinkNameChange = (e) => {
-    console.log("In onDrinkNameChange");
     this.setState({
       drinkName: e.target.value,
     });
@@ -33,12 +32,10 @@ export default class RecipeByName extends Component {
       const drinks = response.data.drinks;
       console.log("Drinks returned:", drinks);
 
-      this.setState((prevState) => {
-        // const newDrinksArray = new Array(drinks);
-        return {
+      this.setState( {
           drinks: drinks,
-        };
-      });
+        });
+
     } catch (error) {
       console.log("error: ", error);
     }
