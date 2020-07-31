@@ -7,7 +7,7 @@ function DisplayIngredientsWithMeasurements(props) {
   const listOfIngredMeas = props.ingredient.map((ingredient) => {
     <ListGroup horizontal>
       <ListGroup.Item>
-        {measurement[index] === null ? "" : measurement[index]}
+        {props.measurement[index] === null ? "" : props.measurement[index]}
       </ListGroup.Item>
       <ListGroup.Item>{ingredient}</ListGroup.Item>
     </ListGroup>;
