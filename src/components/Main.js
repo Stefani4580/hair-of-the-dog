@@ -10,7 +10,7 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App() {
+export default function Main() {
   return (
     <Router>
       <div>
@@ -48,6 +48,3 @@ export default function App() {
 
 
 
-function Users() {
-  return <h2>Users</h2>;
-}
