@@ -41,7 +41,7 @@ export default class RecipeByName extends Component {
             strInstructions: "",
             strIngredient1: "",
             strMeasure1: null,
-          },
+          }
         ];
       }
 
