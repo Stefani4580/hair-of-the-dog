@@ -22,7 +22,7 @@ export default function App() {
               <Link to="/recipeByName">Recipe By Name</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/recipeByAlcohol">Users</Link>
             </li>
           </ul>
         </nav>
@@ -33,8 +33,8 @@ export default function App() {
           <Route path="/recipeByName">
             <RecipeByName />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/recipeByAlcohol">
+            <RecipeByAlcohol />
           </Route>
           <Route path="/">
             <Home />
