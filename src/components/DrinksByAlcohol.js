@@ -1,4 +1,7 @@
 import React from "react";
+import Form from "react-bootstrap/Form";
+import CardGroup from "react-bootstrap/CardGroup";
+import Button from "react-bootstrap/Button";
 
 function DrinksByAlcohol() {
   const [alcohol, setAlcohol] = useState("");
@@ -13,6 +16,7 @@ function DrinksByAlcohol() {
     const response = await axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`
       );
+      console.log(response.data.drinks)
       setDrinks(response.data.drinks)      
       } catch (error) {
         console.log("error: ", error);         

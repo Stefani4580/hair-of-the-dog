@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import Home from "./Home";
 import RecipeByName from "./RecipeByName";
+import DrinksByAlcohol from "./DrinksByAlcohol";
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,7 +23,7 @@ export default function App() {
               <Link to="/recipeByName">Recipe By Name</Link>
             </li>
             <li>
-              <Link to="/recipeByAlcohol">Users</Link>
+              <Link to="/drinksByAlcohol">Drinks By Alcohol</Link>
             </li>
           </ul>
         </nav>
@@ -33,8 +34,8 @@ export default function App() {
           <Route path="/recipeByName">
             <RecipeByName />
           </Route>
-          <Route path="/recipeByAlcohol">
-            <RecipeByAlcohol />
+          <Route path="/drinksByAlcohol">
+            <DrinksByAlcohol />
           </Route>
           <Route path="/">
             <Home />
