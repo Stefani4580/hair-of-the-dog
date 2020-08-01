@@ -29,13 +29,29 @@ export default class RecipeByName extends Component {
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.drinkName}`
       );
       // Returns matching drinks in an array
-      const drinks = response.data.drinks;
+      if (response.data.drinks === null) {
+      } else {
+      }
+      let drinks = response.data.drinks;
       console.log("Drinks returned:", drinks);
 
-      this.setState( {
-          drinks: drinks,
-        });
+      // Set up drinks to display one card saying 404
+      if (drinks === null) {
+        drinks = [
+          {
+            strDrinkThumb:
+              "https://images.unsplash.com/photo-1529395884055-d0c30cc5ba70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+            strDrink: "Drink Not Found",
+            strInstructions: "",
+            strIngredient1: "",
+            strMeasure1: null,
+          },
+        ];
+      }
 
+      this.setState({
+        drinks: drinks,
+      });
     } catch (error) {
       console.log("error: ", error);
     }
@@ -49,120 +65,64 @@ export default class RecipeByName extends Component {
     console.log("Form submitted");
   };
 
-  // Ingredients are stored in 15 named parameters.  This method collects them into an array.
+  // Ingredients and measurements are stored in 15 named parameters.  This method collects them into an array of arrays of measurement & ingredient.
   getIngredientsIntoAnArray = (item) => {
     let strIngredients = [];
 
     if (item.strIngredient1 != null) {
-      strIngredients.push(item.strIngredient1);
+      strIngredients.push(new Array(item.strIngredient1, item.strMeasure1));
     }
     if (item.strIngredient2 != null) {
-      strIngredients.push(item.strIngredient2);
+      strIngredients.push(new Array(item.strIngredient2, item.strMeasure2));
     }
     if (item.strIngredient3 != null) {
-      strIngredients.push(item.strIngredient3);
+      strIngredients.push(new Array(item.strIngredient3, item.strMeasure3));
     }
     if (item.strIngredient4 != null) {
-      strIngredients.push(item.strIngredient4);
+      strIngredients.push(new Array(item.strIngredient4, item.strMeasure4));
     }
     if (item.strIngredient5 != null) {
-      strIngredients.push(item.strIngredient5);
+      strIngredients.push(new Array(item.strIngredient5, item.strMeasure5));
     }
     if (item.strIngredient6 != null) {
-      strIngredients.push(item.strIngredient6);
+      strIngredients.push(new Array(item.strIngredient6, item.strMeasure6));
     }
     if (item.strIngredient7 != null) {
-      strIngredients.push(item.strIngredient7);
+      strIngredients.push(new Array(item.strIngredient7, item.strMeasure7));
     }
     if (item.strIngredient8 != null) {
-      strIngredients.push(item.strIngredient8);
+      strIngredients.push(new Array(item.strIngredient8, item.strMeasure8));
     }
     if (item.strIngredient9 != null) {
-      strIngredients.push(item.strIngredient9);
+      strIngredients.push(new Array(item.strIngredient9, item.strMeasure9));
     }
     if (item.strIngredient10 != null) {
-      strIngredients.push(item.strIngredient10);
+      strIngredients.push(new Array(item.strIngredient10, item.strMeasure10));
     }
     if (item.strIngredient11 != null) {
-      strIngredients.push(item.strIngredient11);
+      strIngredients.push(new Array(item.strIngredient11, item.strMeasure11));
     }
     if (item.strIngredient12 != null) {
-      strIngredients.push(item.strIngredient12);
+      strIngredients.push(new Array(item.strIngredient12, item.strMeasure12));
     }
     if (item.strIngredient13 != null) {
-      strIngredients.push(item.strIngredient13);
+      strIngredients.push(new Array(item.strIngredient13, item.strMeasure13));
     }
     if (item.strIngredient14 != null) {
-      strIngredients.push(item.strIngredient14);
+      strIngredients.push(new Array(item.strIngredient14, item.strMeasure14));
     }
     if (item.strIngredient15 != null) {
-      strIngredients.push(item.strIngredient15);
+      strIngredients.push(new Array(item.strIngredient15, item.strMeasure15));
     }
 
     return strIngredients;
   };
 
-  // Measurements for ingredients are stored in 15 named parameters.  This method collects them into an array.
-  getMeasurementsIntoAnArray = (item) => {
-    let strMeasures = [];
-
-    if (item.strMeasure1 != null) {
-      strMeasures.push(item.strMeasure1);
-    }
-    if (item.strMeasure2 != null) {
-      strMeasures.push(item.strMeasure2);
-    }
-    if (item.strMeasure3 != null) {
-      strMeasures.push(item.strMeasure3);
-    }
-    if (item.strMeasure4 != null) {
-      strMeasures.push(item.strMeasure4);
-    }
-    if (item.strMeasure5 != null) {
-      strMeasures.push(item.strMeasure5);
-    }
-    if (item.strMeasure6 != null) {
-      strMeasures.push(item.strMeasure6);
-    }
-    if (item.strMeasure7 != null) {
-      strMeasures.push(item.strMeasure7);
-    }
-    if (item.strMeasure8 != null) {
-      strMeasures.push(item.strMeasure8);
-    }
-    if (item.strMeasure9 != null) {
-      strMeasures.push(item.strMeasure9);
-    }
-    if (item.strMeasure10 != null) {
-      strMeasures.push(item.strMeasure10);
-    }
-    if (item.strMeasure11 != null) {
-      strMeasures.push(item.strMeasure11);
-    }
-    if (item.strMeasure12 != null) {
-      strMeasures.push(item.strMeasure12);
-    }
-    if (item.strMeasure13 != null) {
-      strMeasures.push(item.strMeasure13);
-    }
-    if (item.strMeasure14 != null) {
-      strMeasures.push(item.strMeasure14);
-    }
-    if (item.strMeasure15 != null) {
-      strMeasures.push(item.strMeasure15);
-    }
-
-    return strMeasures;
-  };
-
-
-
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
-        console.log("This is a recipe:  ", item);
+      console.log("This is a recipe:  ", item);
       // Get ingredients into an array
       let ingredients = this.getIngredientsIntoAnArray(item);
-      let measurements = this.getMeasurementsIntoAnArray(item);
       return (
         <DisplayRecipes
           key={id}
@@ -170,11 +130,9 @@ export default class RecipeByName extends Component {
           strDrink={item.strDrink}
           strInstructions={item.strInstructions}
           ingredients={ingredients}
-          measurements={measurements}
         />
       );
     });
-    console.log("This is listOfDrinkRecipes:  ", listOfDrinkRecipes);
 
     return (
       <div>

@@ -10,7 +10,6 @@ function DisplayRecipes(props) {
       <Card.Body>
         <Card.Title>{props.strDrink}</Card.Title>
         <DisplayIngredientsWithMeasurements
-          measurements={props.measurements}
           ingredients={props.ingredients}
         />
         <Card.Text>{props.strInstructions}</Card.Text>
