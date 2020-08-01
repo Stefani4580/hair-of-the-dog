@@ -29,11 +29,7 @@ export default class RecipeByName extends Component {
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${this.state.drinkName}`
       );
       // Returns matching drinks in an array
-      if (response.data.drinks === null) {
-      } else {
-      }
       let drinks = response.data.drinks;
-      console.log("Drinks returned:", drinks);
 
       // Set up drinks to display one card saying 404
       if (drinks === null) {
@@ -59,10 +55,7 @@ export default class RecipeByName extends Component {
 
   handleFormSubmission = (e) => {
     e.preventDefault();
-    console.log("Form submitted1");
-
     this.searchRecipeByName();
-    console.log("Form submitted");
   };
 
   // Ingredients and measurements are stored in 15 named parameters.  This method collects them into an array of arrays of measurement & ingredient.
@@ -120,7 +113,6 @@ export default class RecipeByName extends Component {
 
   render() {
     const listOfDrinkRecipes = this.state.drinks.map((item, id) => {
-      console.log("This is a recipe:  ", item);
       // Get ingredients into an array
       let ingredients = this.getIngredientsIntoAnArray(item);
       return (

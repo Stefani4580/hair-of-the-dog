@@ -2,11 +2,10 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import DisplayIngredientsWithMeasurements from "./DisplayIngredientsWithMeasurements";
 function DisplayRecipes(props) {
-  console.log("This is props: ", props);
 
   return (
     <Card>
-      <Card.Img variant="top" src={props.strDrinkThumb} />
+      <Card.Img variant="top" src={props.strDrinkThumb} className="drink-pic"/>
       <Card.Body>
         <Card.Title>{props.strDrink}</Card.Title>
         <DisplayIngredientsWithMeasurements
