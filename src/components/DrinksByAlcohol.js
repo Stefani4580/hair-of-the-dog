@@ -55,4 +55,4 @@ function DrinksByAlcohol() {
   );
 }
 
-export default RecipeByAlcohol;
+export default DrinksByAlcohol;
