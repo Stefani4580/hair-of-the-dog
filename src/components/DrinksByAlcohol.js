@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import Form from "react-bootstrap/Form";
 import CardGroup from "react-bootstrap/CardGroup";
 import Button from "react-bootstrap/Button";
@@ -27,7 +28,7 @@ function DrinksByAlcohol() {
       getDrinksByAlcohol();
   }, [alcohol])
 
-  handleFormSubmission =(e)=>{
+  const handleFormSubmission =(e)=>{
       e.preventDefault();
 
   }
@@ -49,12 +50,12 @@ function DrinksByAlcohol() {
         <Button
           variant="primary"
           type="submit"
-          onClick={this.handleFormSubmission}
+          onClick={handleFormSubmission}
         >
           Submit
         </Button>
       </Form>
-      <CardGroup>{listOfDrinkRecipes}</CardGroup>
+      {/* <CardGroup>{listOfDrinkRecipes}</CardGroup> */}
     </div>
   );
 }
