@@ -1,4 +1,4 @@
-# MOD2 Project Proposal - Hair of the Dog
+# MOD2 Project - Hair of the Dog
 ## by Stefani Baker
 
 # Problem Statement
