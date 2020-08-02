@@ -1,12 +1,24 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+
+// React Bootstrap 4
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal"
+
 import "../App.css";
 
-export default class Home extends Component {
-  render() {
+const Home = (props) => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
+
     return (
       <div>
         <Container fluid>
@@ -47,4 +59,4 @@ export default class Home extends Component {
       </div>
     );
   }
-}
+export default Home;
