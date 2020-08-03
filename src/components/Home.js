@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import auth from "firebase";
+import firebase from "firebase";
 
 // React Bootstrap 4
 import Container from "react-bootstrap/Container";
@@ -13,6 +13,23 @@ import Form from "react-bootstrap/Form";
 import "../App.css";
 
 const Home = (props) => {
+
+  // const firebaseApp = firebase.initializeApp({
+  //   apiKey: "AIzaSyA5GKF_SPRZ4Rbe9H1dNrhkVS0qT_M5ybg",
+  //   authDomain: "hair-of-the-dog-c976c.firebaseapp.com",
+  //   databaseURL: "https://hair-of-the-dog-c976c.firebaseio.com",
+  //   projectId: "hair-of-the-dog-c976c",
+  //   storageBucket: "hair-of-the-dog-c976c.appspot.com",
+  //   messagingSenderId: "872903766491",
+  //   appId: "1:872903766491:web:7a1b94c4b844d5e7d337fe",
+  //   measurementId: "G-B7D8R6R9G6",
+  // });
+  
+  // const auth = firebase.auth();
+
+
+
+
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,11 +37,12 @@ const Home = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   const onSubmit = (e) => {
     e.preventDefault();
 
     //Create User with Email and Password
-    auth
+    firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .catch((error) => {
         // Handle Errors here.
@@ -72,7 +90,7 @@ const Home = (props) => {
                     <Form.Group controlId="formBasicCheckbox">
                       <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" onClick={onSubmit}>
                       Submit
                     </Button>
                   </Form>{" "}
