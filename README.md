@@ -18,4 +18,5 @@ At Hair of the Dog, you can find recipes for your favorite alcoholic beverages, 
 - npm i react-router-dom
 - npm i axiom
 - npm install react-bootstrap bootstrap
+- npm install -g firebase-tools
 - npm install --save firebase
