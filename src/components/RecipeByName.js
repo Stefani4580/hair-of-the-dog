@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../App.css";
 import DisplayRecipes from "./DisplayRecipes";
 
 // React Bootstrap 4
@@ -127,8 +128,8 @@ export default class RecipeByName extends Component {
     });
 
     return (
-      <div>
-        <Form>
+      <div className="recipe-by-name">
+        <Form className="search">
           <Form.Group>
             <Form.Label>Drink Name</Form.Label>
             <Form.Control
@@ -141,7 +142,7 @@ export default class RecipeByName extends Component {
             </Form.Text>
           </Form.Group>
           <Button
-            variant="primary"
+            variant="dark"
             type="submit"
             onClick={this.handleFormSubmission}
           >
