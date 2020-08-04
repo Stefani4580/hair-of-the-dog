@@ -3,19 +3,36 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import "../App.css";
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <Container fluid>
-          <Row>
-            <Col className="title-div">
-            <h1 className="title">Welcome to the Hair of the Dog</h1>
-            {/* <Image fluid src="https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""/> */}
-            </Col>
-          </Row>
+        <Container className="title-div" fluid>
+          <Jumbotron className="jumbo">
+            <h1>Hair of the Dog</h1>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for
+              calling extra attention to featured content or information.Imagine
+              this. You've enjoyed a evening out with friends. The next morning,
+              in the midst of your hangover, you've decided you'd like a little
+              of the hair of the dog that bit you. But alas, the evening was so
+              epic that you may have destroyed the brain cell that held the
+              information. What do you do??
+            </p>
+            <p>Go to Hair of the Dog!</p>
+
+            <p>
+              Hair of the Dog is your one stop shop for all things alcoholic. Do
+              you remember the name of the drink? We've got you! Can only
+              remember the spirit? We've got you! Have a shelf full of alcohol
+              and don't know what to make? We've got you! At Hair of the Dog,
+              you can find recipes for your favorite alcoholic beverages, find
+              recipes for the alcohol you have on hand and discover new drinks.
+            </p>
+          </Jumbotron>{" "}
         </Container>
       </div>
     );
