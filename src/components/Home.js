@@ -11,9 +11,9 @@ export default class Home extends Component {
       <div>
         <Container fluid>
           <Row>
-            <Col>
+            <Col className="title-div">
             <h1 className="title">Welcome to the Hair of the Dog</h1>
-            <Image fluid src="https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""/>
+            {/* <Image fluid src="https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""/> */}
             </Col>
           </Row>
         </Container>
