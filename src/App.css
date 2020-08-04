@@ -45,6 +45,15 @@
 }
 
 
+.recipe-card{
+  margin: 1%;
+  width: 18em;
+}
+
+.recipe-cards{
+  margin-top: 3em;
+}
+
 .App {
   text-align: center;
 }

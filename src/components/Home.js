@@ -14,15 +14,13 @@ export default class Home extends Component {
           <Jumbotron className="jumbo">
             <h1>Hair of the Dog</h1>
             <p>
-              This is a simple hero unit, a simple jumbotron-style component for
-              calling extra attention to featured content or information.Imagine
-              this. You've enjoyed a evening out with friends. The next morning,
+              Imagine this. You've enjoyed a evening out with friends. The next morning,
               in the midst of your hangover, you've decided you'd like a little
               of the hair of the dog that bit you. But alas, the evening was so
               epic that you may have destroyed the brain cell that held the
               information. What do you do??
             </p>
-            <p>Go to Hair of the Dog!</p>
+            <p>Go to <strong>Hair of the Dog</strong>!</p>
 
             <p>
               Hair of the Dog is your one stop shop for all things alcoholic. Do

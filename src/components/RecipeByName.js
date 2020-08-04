@@ -149,7 +149,7 @@ export default class RecipeByName extends Component {
             Submit
           </Button>
         </Form>
-        <CardGroup>{listOfDrinkRecipes}</CardGroup>
+        <CardGroup className="recipe-cards">{listOfDrinkRecipes}</CardGroup>
       </div>
     );
   }
