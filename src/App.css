@@ -42,16 +42,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 0;
 }
 
 
+
 .recipe-card{
-  margin: 1%;
+  /* margin-left: 0; */
+  margin-right: .5em;
   width: 18em;
+  
 }
 
 .recipe-cards{
   margin-top: 3em;
+  margin-left: 0;
+  max-width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .App {

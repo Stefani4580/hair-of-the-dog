@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import DisplayIngredientsWithMeasurements from "./DisplayIngredientsWithMeasurements";
 function DisplayRecipes(props) {
   return (
-    <Col lg={2}>
+    <div>
       <Card className="recipe-card">
         <Card.Img
           variant="top"
@@ -17,7 +17,7 @@ function DisplayRecipes(props) {
           <Card.Text>{props.strInstructions}</Card.Text>
         </Card.Body>
       </Card>
-    </Col>
+    </div>
   );
 }
 
