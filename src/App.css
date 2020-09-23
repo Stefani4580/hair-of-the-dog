@@ -84,8 +84,14 @@
   /* background-color: rgba(255, 255, 255, 0.728); */
   width: 30vw;
   border-radius: 1em;
+  margin-bottom: 1em;
 }
 
+.drinks-by-alcohol-drink-pic{
+  /* width: 200px;
+  height: 300px; */
+  max-width: 100%;
+}
 
 .App-header {
   background-color: #282c34;

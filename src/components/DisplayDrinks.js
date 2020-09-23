@@ -9,7 +9,7 @@ function DisplayDrinks(props) {
         <Card.Img
           variant="top"
           src={props.strDrinkThumb}
-          className="drink-pic"
+          className="drinks-by-alcohol-drink-pic"
         />
         <Card.Body>
           <Card.Title>{props.strDrink}</Card.Title>
