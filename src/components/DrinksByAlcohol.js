@@ -58,8 +58,8 @@ function DrinksByAlcohol() {
 
 
   return (
-    <div>
-      <Form>
+    <div className="drinks-by-alcohol">
+      <Form className="search">
         <Form.Group>
           <Form.Label>Alcohol</Form.Label>
           <Form.Control
@@ -69,7 +69,7 @@ function DrinksByAlcohol() {
           />
           <Form.Text className="text-muted">What alcohol do you have</Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleFormSubmission}>
+        <Button variant="dark" type="submit" onClick={handleFormSubmission}>
           Submit
         </Button>
       </Form>
